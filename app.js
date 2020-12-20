@@ -11,19 +11,11 @@ let point2 = tableauUn.map(nbr => nbr * 10);
 let point3 = tableauUn.map(nbr => (nbr + 2)/45);
 
 
-
-
-
-let recap = [
-    point1,
-    point2,
-    point3
-]
-
-for (let table in recap){
-    for(let item in recap[table]){
-        newDiv.innerHTML += recap[table][item] + '<br>';
+function recap(...table) {
+    for(let item in table){
+        newDiv.innerHTML += table[item] + '<br>';
         document.body.appendChild(newDiv);
     }
 }
 
+recap(point1, point2, point3);
